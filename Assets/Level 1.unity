@@ -194,22 +194,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4554809732632018, guid: 8d9dd408d3df26f41aca6333424de217, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 51.278004
-      objectReference: {fileID: 0}
-    - target: {fileID: 4554809732632018, guid: 8d9dd408d3df26f41aca6333424de217, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -23.123001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4554809732632018, guid: 8d9dd408d3df26f41aca6333424de217, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 5.3760004
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d9dd408d3df26f41aca6333424de217, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &672731770
+--- !u!1001 &516019577
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -252,30 +240,24 @@ Prefab:
       propertyPath: m_Name
       value: Rocket Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 54965356376190360, guid: aa96ead882b24334eb4458dc8a4ddb3e,
+    - target: {fileID: 82115565361243478, guid: aa96ead882b24334eb4458dc8a4ddb3e,
         type: 2}
-      propertyPath: m_Mass
-      value: 0.05
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e1dfd8e16b85604e87560f4d3a00060, type: 3}
+    - target: {fileID: 82115565361243478, guid: aa96ead882b24334eb4458dc8a4ddb3e,
+        type: 2}
+      propertyPath: m_Pitch
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 82115565361243478, guid: aa96ead882b24334eb4458dc8a4ddb3e,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa96ead882b24334eb4458dc8a4ddb3e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &672731771 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1308261866650718, guid: aa96ead882b24334eb4458dc8a4ddb3e,
-    type: 2}
-  m_PrefabInternal: {fileID: 672731770}
---- !u!114 &672731774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 672731771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d149faf0a62ae0c4d955bc72c7e9719c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1139850188
 Prefab:
   m_ObjectHideFlags: 0
