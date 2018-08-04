@@ -7,6 +7,10 @@ using AudioSource = UnityEngine.AudioSource;
 
 public class Rocket : MonoBehaviour
 {
+    [SerializeField] float rcsThrust = 100f;
+    [SerializeField] float mainThrust = 100f;
+
+
     Rigidbody rigidBody;
     AudioSource audioSource;
 
@@ -20,31 +24,62 @@ public class Rocket : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    ProcessInput();
-	}
+	    Rotate();
+	    Thrust();
+    }
 
-    private void ProcessInput()
+    void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKey(KeyCode.Space)) //can thrust while rotating
+        switch (collision.gameObject.tag)
         {
-            rigidBody.AddRelativeForce(Vector3.up);
+            case "Friendly":
+                //do nothing
+                print("ok"); //todo remove
+                break;
+            case "Fuel":
+                print("Fuel"); //todo remove
+                break;
+            default:
+                print("Dead");
+                //kill player
+                break;
+        }
+    }
+
+    private void Rotate()
+    {
+
+        rigidBody.freezeRotation = true; // take manual control of rotation
+
+        
+
+        float rotationThisFrame = rcsThrust * Time.deltaTime;
+        if (Input.GetKey(KeyCode.A))
+        {
+ 
+            transform.Rotate(Vector3.forward * rotationThisFrame);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(-Vector3.forward * rotationThisFrame);
+        }
+
+        rigidBody.freezeRotation = false; // resume physics control of rotation
+    }
+
+    private void Thrust()
+    {
+        if (Input.GetKey(KeyCode.Space)) // can thrust while rotating
+        {
+            rigidBody.AddRelativeForce(Vector3.up * mainThrust);
             if (!audioSource.isPlaying)
             {
                 audioSource.Play();
             }
-            
         }
         else
         {
             audioSource.Stop();
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(Vector3.forward);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(-Vector3.forward);
         }
     }
 }
