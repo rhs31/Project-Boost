@@ -651,11 +651,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -35.7
+      value: -30.8
       objectReference: {fileID: 0}
     - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
       propertyPath: m_LocalPosition.z
@@ -663,19 +663,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.6067945
       objectReference: {fileID: 0}
     - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7948588
       objectReference: {fileID: 0}
     - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
       propertyPath: m_RootOrder
@@ -693,6 +693,10 @@ Prefab:
     - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
       propertyPath: m_LocalScale.x
       value: 4.1094213
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202588700548182, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -74.716
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 961e06b6ff8bf7f4f875b5a0e96321de, type: 2}
@@ -764,6 +768,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4412157612130676, guid: 974c959a4f5c6114f809201939321a84,
     type: 2}
   m_PrefabInternal: {fileID: 1288271399}
+--- !u!1001 &1304536329
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4577349542015576, guid: 142d32412de43e543bd062a0f778d5c8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 8.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577349542015576, guid: 142d32412de43e543bd062a0f778d5c8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577349542015576, guid: 142d32412de43e543bd062a0f778d5c8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -21.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577349542015576, guid: 142d32412de43e543bd062a0f778d5c8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577349542015576, guid: 142d32412de43e543bd062a0f778d5c8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577349542015576, guid: 142d32412de43e543bd062a0f778d5c8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577349542015576, guid: 142d32412de43e543bd062a0f778d5c8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577349542015576, guid: 142d32412de43e543bd062a0f778d5c8, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 142d32412de43e543bd062a0f778d5c8, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1385388451
 Prefab:
   m_ObjectHideFlags: 0
