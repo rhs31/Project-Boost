@@ -130,7 +130,7 @@ public class Rocket : MonoBehaviour
 
     private void ApplyThrust()
     {
-        rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+        rigidBody.AddRelativeForce(Vector3.up * mainThrust); //time.deltaTime was supposed to be here but it broke it
         if (!audioSource.isPlaying)
         {
             audioSource.PlayOneShot(mainEngine);
