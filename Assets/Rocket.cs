@@ -1,4 +1,5 @@
 ﻿
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using AudioSource = UnityEngine.AudioSource;
@@ -26,8 +27,8 @@ public class Rocket : MonoBehaviour
         Dying,
         Transcending
     }
-
     State state = State.Alive;
+    bool collisionsDisabled = false;
 
 	// Use this for initialization
 	void Start ()
@@ -46,12 +47,28 @@ public class Rocket : MonoBehaviour
 	        RespondToRotateInput();
 	        
         }
-	   
+        if(Debug.isDebugBuild)
+        {
+            RespondToDebugKeys();
+        }
+        
+    }
+
+    private void RespondToDebugKeys()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if(Input.GetKeyDown(KeyCode.C))
+        {
+            collisionsDisabled = !collisionsDisabled; //toggle true or false
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (state != State.Alive)
+        if (state != State.Alive || collisionsDisabled)
         {
             return; //ignore collisions when dead
         }
@@ -93,18 +110,19 @@ public class Rocket : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings; //loops back to first level when it gets larger than amount of scenes in build
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     private void RespondToRotateInput()
     {
 
-        rigidBody.freezeRotation = true; // take manual control of rotation
+        rigidBody.angularVelocity = Vector3.zero;
 
         float rotationThisFrame = rcsThrust * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
         {
- 
             transform.Rotate(Vector3.forward * rotationThisFrame);
         }
         else if (Input.GetKey(KeyCode.D))
@@ -123,9 +141,14 @@ public class Rocket : MonoBehaviour
         }
         else
         {
-            audioSource.Stop();
-            mainEngineParticles.Stop();
+            StopApplyingThrust();
         }
+    }
+
+    private void StopApplyingThrust()
+    {
+        audioSource.Stop();
+        mainEngineParticles.Stop();
     }
 
     private void ApplyThrust()
